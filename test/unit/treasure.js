@@ -25,7 +25,7 @@ describe('Treasure', function(){
 
   describe('constructor', function(){
     it('should create a new Treasure object', function(){
-      var f = {name:'food', loc:{name:'kitchen', lat:'36', lng:'-86.7'}, photo:'yum.com', hint:'open fridge. Eat'},
+      var f = {name:'food', loc:{name:'kitchen', lat:'36', lng:'-86.7'}, photo:'yum.com', hint:'open fridge. Eat', found:false},
           t = new Treasure(f);
       expect(t).to.be.instanceof(Treasure);
     });
@@ -43,7 +43,7 @@ describe('Treasure', function(){
 
 describe('.create', function(){
   it('should create a new treasure in the database', function(done){
-    var f = {name:'food', loc:{name:'kitchen', lat:'36', lng:'-86.7'}, photo:'yum.com', difficulty:'easy', hint:'open fridge. Eat'};
+    var f = {name:'food', loc:{name:'kitchen', lat:'36', lng:'-86.7'}, photo:'yum.com', difficulty:'easy', hint:'open fridge. Eat', found:false};
     Treasure.create(f, function(err, treasure){
       expect(treasure._id). to.be.instanceof(Mongo.ObjectID);
       done();

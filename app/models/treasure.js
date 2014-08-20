@@ -8,6 +8,7 @@ function Treasure(o){
   this.photo = o.photo;
   this.difficulty = o.difficulty;
   this.hint = o.hint;
+  this.found = false;
 }
 
 Object.defineProperty(Treasure, 'collection', {
