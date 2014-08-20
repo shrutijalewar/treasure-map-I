@@ -54,7 +54,7 @@ describe('.create', function(){
 describe('.findById', function(){
   it('should find one treasure object out of the database', function(done){
     Treasure.findById('000000000000000000000001',function(treasure){
-      //console.log(treasure);
+      console.log(treasure);
       expect(treasure.name).to.equal('Gold');
       expect(treasure.loc.name).to.equal('paris');
       expect(treasure.difficulty).to.equal('hard');

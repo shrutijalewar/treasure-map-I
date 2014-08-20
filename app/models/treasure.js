@@ -4,7 +4,7 @@ var Mongo = require('mongodb'),
 
 function Treasure(o){
   this.name = o.name;
-  this.loc = {name:o.name, lat: parseFloat(o.lat), lng: parseFloat(o.lng)};
+  this.loc = {name:o.loc.name, lat: parseFloat(o.loc.lat), lng: parseFloat(o.loc.lng)};
   this.photo = o.photo;
   this.difficulty = o.difficulty;
   this.hint = o.hint;
