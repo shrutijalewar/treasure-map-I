@@ -1,6 +1,7 @@
 ## name of project
 ### Code Badges
 [![Build Status](https://travis-ci.org/shrutijalewar/treasure-map-I.svg)](https://travis-ci.org/shrutijalewar/treasure-map-I)
+[![Coverage Status](https://coveralls.io/repos/shrutijalewar/treasure-map-I/badge.png)](https://coveralls.io/r/shrutijalewar/treasure-map-I)
 build status icon
 coverage status icon
 
