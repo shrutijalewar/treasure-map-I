@@ -1,0 +1,17 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Gold",
+  "loc":{"name":"paris","lat":48.856614,"lng":2.3522219},
+  "photo":"http://images.com/bob.jpg",
+  "difficulty":"hard",
+  "hint":"Dig deep. Keep looking. Get lucky"
+}
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"Silver",
+  "loc":{"name":"rome","lat":41.87194,"lng":12.56738},
+  "photo":"http://images.com/silver.jpg",
+  "difficulty":"easy",
+  "hint":"Dig shallow. Keep looking. Get lucky"
+}
+
