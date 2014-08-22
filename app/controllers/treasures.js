@@ -1,5 +1,6 @@
 'use strict';
-var Treasure = require('../models/treasure');
+var Treasure = require('../models/treasure'),
+    mp  =  require('multiparty');
 
 exports.init = function(req, res){
   res.render('treasures/init');
@@ -12,13 +13,26 @@ exports.index = function(req, res){
 };
 
 exports.create = function(req, res){
-  Treasure.create(req.body, function(){
-    res.redirect('/treasures');
+  var form = new mp.Form();
+  form.parse(req, function(err, files, fields){
+    Treasure.create(files, fields, function(err, t){
+      t.uploadPhoto(files, function(){
+        res.redirect('/treasures');
+      });
+    });
   });
 };
 
 exports.show = function(req, res){
   Treasure.findById(req.params.id, function(treasure){
     res.render('treasures/show',{treasure:treasure});
+  });
+};
+exports.found = function(req, res){
+  Treasure.findById(req.params.id, function(treasure){
+    treasure.found();
+    treasure.save(function(){
+      res.redirect('/treasures');
+    });
   });
 };
