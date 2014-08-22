@@ -14,5 +14,9 @@ block content
         tbody
           tr(data-name= treasure.loc.name, data-lat= treasure.loc.lat, data-lng= treasure.loc.lng)
             td= treasure.hint
+  .row
+    .col-xs-12
+      form(method='post', action='/treasures/#{treasure._id}')
+        button#found Found It!
 block scripts
   script(src='/js/user/show-treasures.js')
